@@ -6,13 +6,24 @@ description: >
   video conferencing (vc.v1), meeting minutes (minutes.v1), task management,
   approval workflows, contacts, cloud drive, wiki/knowledge base.
   Requires the official Lark MCP server to be configured and running.
-version: "3.0.0"
+version: "3.1.0"
 author: community
 tags: [feishu, lark, messaging, bitable, calendar, vc, minutes, docs, tasks, approvals]
+homepage: "https://github.com/lucascheung/lark-mcp"
+source: "https://github.com/larksuite/lark-openapi-mcp"
 requires:
+  env:
+    - name: LARK_APP_ID
+      description: "Your Feishu/Lark App ID from the Open Platform developer console (open.feishu.cn/app or open.larksuite.com/app)"
+      sensitive: false
+    - name: LARK_APP_SECRET
+      description: "Your Feishu/Lark App Secret from the Open Platform developer console"
+      sensitive: true
   mcp_servers:
     - name: lark-mcp
-      description: "Official Feishu/Lark OpenAPI MCP server (@larksuiteoapi/lark-mcp)"
+      package: "@larksuiteoapi/lark-mcp"
+      source: "https://github.com/larksuite/lark-openapi-mcp"
+      description: "Official Feishu/Lark OpenAPI MCP server — install with: npx -y @larksuiteoapi/lark-mcp mcp -a $LARK_APP_ID -s $LARK_APP_SECRET"
 ---
 
 # Feishu / Lark Comprehensive Skill
