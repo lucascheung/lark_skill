@@ -23,7 +23,9 @@ requires:
     - name: lark-mcp
       package: "@larksuiteoapi/lark-mcp"
       source: "https://github.com/larksuite/lark-openapi-mcp"
-      description: "Official Feishu/Lark OpenAPI MCP server — install with: npx -y @larksuiteoapi/lark-mcp mcp -a $LARK_APP_ID -s $LARK_APP_SECRET"
+      description: "Official Feishu/Lark OpenAPI MCP server"
+      command: "npx"
+      args: ["-y", "@larksuiteoapi/lark-mcp", "mcp", "-a", "$LARK_APP_ID", "-s", "$LARK_APP_SECRET"]
 ---
 
 # Feishu / Lark Comprehensive Skill
